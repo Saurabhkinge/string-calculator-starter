@@ -21,4 +21,9 @@ import org.junit.jupiter.api.BeforeEach;
 		{
 	        assertEquals(0, stringCalculator.add(""));
 	    }
+		 @Test
+	    public void string_with_single_number_should_return_number_as_int() 
+	    {
+	        assertEquals(1, stringCalculator.add("1"));
+	    }
 }
