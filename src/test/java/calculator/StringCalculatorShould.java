@@ -37,4 +37,16 @@ import org.junit.jupiter.api.BeforeEach;
 	    {
 	    	assertEquals(11+22+33+44+55, stringCalculator.add("11,22,33,44,55"));
 	    }
+	    @Test
+	    public void stringWithTwoLinesBetNumbers()
+	    {
+	        assertEquals(13, stringCalculator.add("8\n5"));
+	    }
+	    
+	    @Test
+	    public void stringWithDifferentDelimeter()
+	    {
+	    	assertEquals(14+55+2, stringCalculator.add("//;\n14;55;2") );
+	    }
+	    
 }
