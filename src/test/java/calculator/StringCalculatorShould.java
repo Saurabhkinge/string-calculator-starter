@@ -26,4 +26,15 @@ import org.junit.jupiter.api.BeforeEach;
 	    {
 	        assertEquals(1, stringCalculator.add("1"));
 	    }
+		  @Test
+	    public void stringHavingNumbers()
+	    {
+	        assertEquals(stringCalculator.add("50,60"),50+60);
+	    }
+	    
+	    @Test
+	    public void StringUnknownNumbers()
+	    {
+	    	assertEquals(11+22+33+44+55, stringCalculator.add("11,22,33,44,55"));
+	    }
 }
