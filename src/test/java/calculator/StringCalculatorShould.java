@@ -48,5 +48,28 @@ import org.junit.jupiter.api.BeforeEach;
 	    {
 	    	assertEquals(14+55+2, stringCalculator.add("//;\n14;55;2") );
 	    }
+		 @Test
+	    public void stringWithSingleNegativeNoThrowsException()
+	    {
+	    	assertThrows(RuntimeException.class, ()->
+	    		
+	    		stringCalculator.add("2,-6,4")
+	    	);
+	    }
+	    
+	    @Test
+	    public void stringWithMultipleNegativeNoThrowsException()
+	    {
+	    		RuntimeException rexe= null;
+	    		try{
+	    			stringCalculator.add("4,2,-9,-7,4,5");
+	    		}catch(RuntimeException e)
+	    		{
+	    			rexe=e;
+	    		}
+	    	
+	    	assertNotNull(rexe);
+	    	assertEquals("negatives not allowed: [-9, -7]", rexe.getMessage());	    	
+	    }
 	    
 }
